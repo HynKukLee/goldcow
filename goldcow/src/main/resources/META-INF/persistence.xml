@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="goldcow">
+	
+		        <class>kr.ac.goldcow.model.Project</class>
+				<class>kr.ac.goldcow.model.Reward</class>
+				<class>kr.ac.goldcow.model.Snstype</class>
+				<class>kr.ac.goldcow.model.Support</class>
+				<class>kr.ac.goldcow.model.Comment</class>
+				<class>kr.ac.goldcow.model.User</class>
+       <exclude-unlisted-classes>true</exclude-unlisted-classes>
+	
+	
+	<properties>
+
+<!-- 캐쉬 기능. 이게 true가 되어 있으면 이 프로젝틀르 통하지 않는 query는 반영이 늦을 수 있음 -->
+<property name="eclipselink.query-results-cache" value="false" />
+<!-- 데이터 베이스 연결 상의 로그 레벨 설정 -->
+<property name="eclipselink.logging.level" value="INFO" />
+<property name="eclipselink.logging.parameters" value="true" />
+<!-- driver 패키지 설정 -->
+<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+<!-- database 설정 -->
+<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/goldcow?characterEncoding=utf8" />
+<!-- 접속 id -->
+<property name="javax.persistence.jdbc.user" value="root" />
+<!-- 접속 password -->
+<property name="javax.persistence.jdbc.password" value="1234" />
+</properties>
+	</persistence-unit>
+</persistence>
